@@ -2,7 +2,11 @@
 
 ### Artifact Explanation and Self-Assessment
 
-The artifact I've chosen for my three narratives is a lightweight, self-hostable social network that I created a while ago that allows custom user-defined CSS styling on posts. Since it's a broad enough project to add a wide variety of features to, I thought it would be a good opportunity to showcase my abilities in multiple areas. During my time in SNHU's Computer Science course, I feel that I've matured a lot as a software developer. The most important thing that I've learned is the difference between code that "works" and code that's Good. It can be easy for inexperienced developers to stumble around until they've got the functionality that they were trying to create, and then avoid commenting, organizing, or optimizing it. This is a trap that I often fell into before. The narratives below summarize my experience fixing up an old codebase that I created in the past, and trying to make it into something that I can be proud of now with my improved experience and abilities.
+My journey with Computer Science began when I was 11, when I learned Java in order to make mods for the videogame Minecraft. Since then, I've fallen in love with computers and spent much of my free time broadening my understanding of Computer Science and Software Engineering by experimenting with game development, learning new programming languages, etc. I've always enjoyed learning about new technologies that I'm unfamiliar with and tinkering with little software projects.
+
+During my time in SNHU's Computer Science course, I feel that I've matured a lot as a software developer. The most important thing that I've learned is the difference between code that "works" and code that's Good. It can be easy for inexperienced developers to stumble around until they've got the functionality that they were trying to create, and then avoid commenting, organizing, or optimizing it. This is a trap that I often fell into before. The narratives below summarize my experience fixing up an old codebase that I created in the past, and trying to make it into something that I can be proud of now with my improved experience and abilities.
+
+The artifact I've chosen for my three narratives is a lightweight, self-hostable social network that I created a while ago that allows custom user-defined CSS styling on posts. Since it's a broad enough project to add a wide variety of features to, I thought it would be a good opportunity to showcase my abilities in multiple areas.
 
 ### Code Review
 
@@ -29,3 +33,9 @@ Adding the login system was a challenge, because there are a lot of little thing
 Regarding databases, I switched the database used from SQL to MongoDB. I found the switch to be a little bit complex, because the library I used to interface with MongoDB (Mongoose) required stricter setup than the raw SQL calls that I was previously using. However, that strictness comes with the reward of making it easier to catch typos and bugs that would otherwise only come up as runtime errors.
 
 One optimization I made was to change the way that post fetching works, so the server only sends the most recent 20 posts to users (unless otherwise specified). Previously, as I mentioned in my code review, the server was sending the entire database of posts, which could be a massive performance issue if enough posts accrued over time.
+
+Something that I found particularly nice about MongoDB was the 'populate' function, which allowed me to automatically expand queries where the results reference data from a different table. I made use of this function for including the post styling in posts that are returned by the REST API, since styling (which is now attached to a user) is stored in the Users table, whereas posts are of course stored in the Posts table. This optimization allowed me to turn what would otherwise be a series of DB calls (one per post) into only a single call. 
+
+### Post-Narratives Code Review
+
+My code review after the changes I made [can be found here](https://youtu.be/KXRz_jr3NtY).
