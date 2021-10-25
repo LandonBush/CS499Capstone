@@ -12,6 +12,8 @@ The artifact I've chosen for my three narratives is a lightweight, self-hostable
 
 My code review video [can be found here](https://youtu.be/YCCN7cI8OXQ).
 
+The code itself [can be found here](https://github.com/LandonBush/CS499Code).
+
 ### Narrative 1: Software Engineering
 
 To display my software engineering ability, I've refactored all of the code to make it more clean and well-commented. I've also added unit testing and fixed up various bugs. After refactoring, the code is significantly more readable and easier to make additions to. Readable and organized code is important because even as the person who wrote the code, it's easy to forget how it works later if it's too complex, and organized structure prevents the codebase from getting more confusing and entangled as new features are added.
